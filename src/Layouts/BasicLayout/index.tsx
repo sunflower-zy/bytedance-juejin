@@ -1,13 +1,14 @@
-
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-function BasicLayout(props: any) {
-    const { children } = props;
+import { Outlet } from "react-router-dom";
+function BasicLayout() {
     return (
         <>
             <Header></Header>
-            <Main>{children}</Main>
+            <Main>
+                <Outlet />
+            </Main>
             <Footer />
         </>
     );

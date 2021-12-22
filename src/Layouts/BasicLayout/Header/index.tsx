@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useState, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
@@ -20,10 +21,9 @@ function Header() {
     useEffect(() => {
         const getCategory = async () => {
             try {
+                const response = await getCategories();
                 // @ts-ignore
-                const result: CategoryResult = await getCategories();
-                // @ts-ignore
-                setCategory(result.data.categories);
+                setCategory(response.data.categories);
             } catch (error) {
                 alert("获取分类数据失败");
             }
@@ -32,25 +32,24 @@ function Header() {
         getCategory();
     }, []);
 
+    const [currentCategory, setCurrentCategory] = useState(0);
+    const HeaderOneTab = [];
+    const HeaderTwoTab = [];
+
+    categroy.forEach((item, index) => {
+        HeaderOneTab.push(
+            <NavLink to={`/${item.category_name}`} key={item.category_id}>
+                {item.category_name}
+            </NavLink>
+        );
+        if (item.children) {
+        }
+    });
+
     return (
         <header className="juejin-layout-header">
-            {
-                categroy.map((item,index)=>(
-                    <nav>
-                        
-                    </nav>
-                ))
-            }
-            <nav className="juejin-layout-header-tab ">
-                <NavLink to="/recommend">推荐</NavLink>
-                <NavLink to="/frontend">前端</NavLink>
-                <NavLink to="/backend">后端</NavLink>
-            </nav>
-            <nav className="juejin-layout-header-tab">
-                <NavLink to="/recommend">推荐</NavLink>
-                <NavLink to="/frontend">前端</NavLink>
-                <NavLink to="/backend">后端</NavLink>
-            </nav>
+            <nav>{HeaderOneTab.map((item, index) => item)}</nav>
+            <nav>{HeaderTwoTab.map((item, index) => item)}</nav>
         </header>
     );
 }
