@@ -13,3 +13,21 @@
     justify-content: space-around;
 }
 
+.juejin-layout-header-tab-one {
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+}
+
+.juejin-layout-header-tab-two {
+    width: 100%;
+    display: flex;
+    visibility: visible;
+    position: fixed;
+    top: 32px;
+}
+
+.juejin-layout-header-link-item {
+    margin: 0 16px;
+}
