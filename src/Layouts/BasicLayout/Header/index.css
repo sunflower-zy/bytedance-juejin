@@ -1,8 +1,11 @@
 .juejin-layout-header {
     min-width: 100vw;
+    height: 64px;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
+    background-color: #fff;
 }
 
 .juejin-layout-header-tab {
@@ -15,7 +18,6 @@
 
 .juejin-layout-header-tab-one {
     width: 100%;
-
     position: fixed;
     top: 0;
 }

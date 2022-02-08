@@ -1,0 +1,55 @@
+.juejin_articleList_item {
+  color: #86909c;
+  margin-bottom: 16px;
+}
+
+.juejin_articleList_item_coverImage {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+.juejin_articleList_item_coverImage_error {
+  display: none;
+}
+.juejin_article_item_top {
+  font-size: 12px;
+  color: #4e5969;
+}
+.juejin_article_item_middle {
+  display: flex;
+  align-items: flex-start;
+}
+.juejin_article_item_middle_left {
+  white-space: nowrap; /*规定段落中的文本不进行换行*/
+  overflow: hidden; /*超出部分不显示*/
+  text-overflow: ellipsis;
+}
+.juejin_article_item_title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1d2129;
+}
+.juejin_article_item_brief {
+  font-size: 12px;
+}
+.juejin_article_item_bottom {
+  width: 50%;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #4e5969;
+}
+.juejin_article_item_icon {
+  width: 16px;
+  height: 16px;
+}
+.juejin_article_item_view_icon {
+  background-image: url(https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/view.1eda8fa.png);
+}
+.juejin_article_item_view_icon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKYSURBVHgB7VddbtNAEJ7ZdVJFtMKPSE2EjxBOgHOChhOQnCDilTaqoYLncIK2J6g5QZ0bpCeoVUDi0RCkQOzdZfyTHztO5brFPMD3EI1ndmc+r+dnA/CvA+GeaA1nPQB2QK50peAq0MToq9Vwi+6/F4HmkX+MqKyM2vW56BQlwaAknlgzYxVc9JUUHUSY0INRE/y0qJ/SBGoBayei8+mkcfb5XcNhrNahI/VIZzYPZ2YRP6UJELrhj5JqvFC4FnpSwXmkB2wXcVKeAMLzKJBCO6VXyovNqBdxU4pAnPloUNZPvryvT1JGLBa4NIEw+WjbcbSZsVHWTol5EEvSgQK4EwHdUroW8Iv47ZV981Y7X7c3D30ztJHohklZxKcGBbH/et7DwB9QqYXJ5WqafJVdg0yeJq1Fbw1/XW96wbBH9Nd7BGbfgJwMYC2BptPai73duUlne5GoXE6Nxs1pNHFQNOB2eFJAZ5E7yxOIGotQl9nm+GjP70ohgXFOT3LM+U7XtepenmfO688Afm5JQqEHQb1HJzhgHOgloZ8iQI3FimMrW0n5AZlGi1Q37YRdh7UOW5DYttrphG1AFQY3lh5XZnwahafgUQIp+Q0eGIyJRXNycwj8eSjF4hJFZldOwKASpk9shvL0Ox9XTkAEVEkxHG+0yqMqP0GU0FLKj+vK6ggkwwsUc6BqAvvWvL1o0dnhVQkBLqSZiE7WVgmBvPKrjMC28tskgHFpIK89hgeElP7LREyV3wLLWUAt+AoZdkmwW8O5Q6q8O51JtksoCLoxhf8VIj+I7CxvTXocH81H4bRKOaHrdrSQ8cKBN4OoNzcnO1a+LQODxnLgx9NKqwnPtXYnsf5HO/D5ne574X4a6O5tE/Q//jp+A4uQ/sJMdO/iAAAAAElFTkSuQmCC);
+}
+
+.juejin_article_item_view_icon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAA…6xXOXFS8QRQdFx/YdnhyP1D0hcwr1KvEAAAAASUVORK5CYII=);
+}

@@ -3,6 +3,8 @@
     width: 100%;
     position: fixed;
     bottom: 0;
+    z-index: 1;
+    background-color: #fff;
 }
 
 .juejin-layout-footer-tab {

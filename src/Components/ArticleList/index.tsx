@@ -1,41 +1,52 @@
+// @ts-nocheck
 import ArticleListItem from "../ArticleListItem";
 
 import { getArticles } from "../../fake-api";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 interface ArticleListProps {
-    categoryId: number;
-    sortBy: string | null;
+  categoryId: number;
+  sortBy: string | null;
 }
 
-interface Article {}
-
 function ArticleList(props: ArticleListProps) {
-    const { categoryId, sortBy } = props;
-    const [limit] = useState(10);
-    const [offset, setOffset] = useState(0);
-    const [article, setArticle] = useState<any>([]);
-    useEffect(() => {
-        const getDataSource = async () => {
-            const response = await getArticles(
-                categoryId,
-                sortBy,
-                offset,
-                limit
-            );
-            setArticle((article: any) => [...article, response.data.articles]);
-        };
-        getDataSource();
-    }, [offset, limit]);
+  const historyList = useContext(historyListContext);
+  const { categoryId, sortBy } = props;
+  const [limit, setLimit] = useState(10);
+  const [offset, setOffset] = useState(0);
+  const [articleList, setArticleList] = useState([]);
+  useEffect(() => {
+    const getDataSource = async () => {
+      const response = await getArticles(categoryId, sortBy, offset, limit);
+      setArticleList((articleList) => [
+        ...articleList,
+        ...response.data.articles,
+      ]);
+      console.log(response.data.articles);
+    };
 
-    return (
-        <>
-            {article
-                .slice(offset, offset + limit + 1)
-                .map((item: any, index: number) => {
-                    return <ArticleListItem />;
-                })}
-        </>
-    );
+    getDataSource();
+    return () => {
+      setArticleList([]);
+    };
+  }, [categoryId, sortBy, offset, limit]);
+
+  return (
+    <>
+      {sortBy !== "history"
+        ? articleList.map((item) => {
+            return <ArticleListItem key={item.article_id} article={item} />;
+          })
+        : historyList.map((item) => {
+            return (
+              <ArticleListItem
+                key={item.article_id}
+                article={item}
+                setHistoryList
+              />
+            );
+          })}
+    </>
+  );
 }
 
 export default ArticleList;
